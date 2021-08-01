@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+
+
+{% block titulo %}
+ Home
+{% endblock %}
+
+{% block conteudo %}
+	{% for post in postagem %}
+	<h1 class="titulos"><a href="{% url 'Postagem' post.id %}">{{post.titulo}}</a></h1>
+	<img src="/media/{{post.imagem}}">
+	<p class="date">Publicado {{post.data}}por Milton</p>
+	<p class="paragrafos">{{post.corpo|truncatewords:60}}{% buttons %} <button type="button" class="btn btn-link"><a href="{% url 'Postagem' post.id %}">Ler mais</a></button>{% endbuttons %}</p>
+
+	{% endfor %}
+{% endblock %}

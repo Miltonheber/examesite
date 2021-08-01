@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block titulo %} {{exames.disciplina}}{% endblock %}
+
+
+
+{% block conteudo %}
+{% if exames %}
+	<h1 class="titulos"> Exames de {{exames.disciplina}}</h1>
+	<table class="table table-dark">
+	  <thead>
+	    <tr>
+	      <th scope="col">Ano</th>
+	      <th scope="col">Disciplina</th>
+	      <th scope="col">Instituição</th>
+	      <th scope="col">Baixar</th>
+	    </tr>
+	  </thead>
+	  {% for exame in exames %}
+		  <tbody>
+		    <tr>
+		      <td scope="row">{{exame.ano}}</td>
+		      <td scope="row">{{exame.disciplina}}</td>
+		      <td scope="row">{{exame.instituicao}}</td>
+		      <td scope="row">{% buttons %} <button type="button" class="btn btn-success">Baixar</button>{% endbuttons %}</td>
+		    </tr>  
+		  </tbody>
+		{% endfor %}
+	</table>
+{% endif %}
+{% if not exames %}
+	<h1 class="titulos">Não há exames disponíveis</h1>
+{% endif %}
+
+
+{% endblock %}

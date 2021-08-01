@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+
+
+{% block titulo %}
+ {{postagem.titulo}}
+
+{% endblock %}
+
+{% block conteudo %}
+    <h1 class="titulos">{{postagem.titulo}}</h1>
+    <img src="/media/{{postagem.imagem}}">
+    <p class="date">Publicado {{postagem.data}} por Milton</p>
+    <p class="paragrafos">{{postagem.corpo}}</p>
+
+
+{% endblock %}
