@@ -1,6 +1,17 @@
+body{
+	font-family:Arial;
+	padding:8px;
+
+
+}
+
 .paragrafos{
 	color:black;
-	font-size:12px;
+	font-size:20px;
+	text-align:center;
+	
+
+
 
 
 }
@@ -9,7 +20,7 @@
 
 	color:black;
 	text-align:center;
-	font-size:24px;
+	font-size:35px;
 
 
 }
@@ -17,4 +28,40 @@
 .titulos a {
 
 	color:black;
+	margin-top:5px;
+
+}
+
+img {
+	margin-left:175px;
+	margin-right:100px;
+	margin-top:auto;
+	margin-bottom:10px;
+	width:650px;
+
+
+
+}
+
+.date{
+
+	text-align:center;
+	font-size:16px;
+	color:#000033;
+
+}
+
+
+
+
+
+#borda{
+	border-bottom:1px solid #0066cc;
+
+
+}
+
+.paragrafos .btnbtn-secondarybg-dark{
+
+	color:white;
 }

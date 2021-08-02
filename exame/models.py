@@ -10,6 +10,11 @@ class Post(models.Model):
     imagem = models.FileField('imagem',blank=True,upload_to='imagem')
     corpo = models.TextField('Corpo')
 
+    class Meta:
+        ordering = ['-data',]
+     
+
+
 
     def __str__(self):
         return self.titulo
@@ -20,6 +25,8 @@ class Exame(models.Model):
     instituicao = models.CharField('Instituição',max_length=100)
     nivel = models.CharField('Nivel', max_length=100)
     pdf = models.FileField('arquivo_pdf', upload_to='pdf')
+    class Meta:
+        ordering = ['-ano',]
 
     def __str__(self):
         return self.disciplina

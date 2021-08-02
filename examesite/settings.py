@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'exame',
     'bootstrap4',
     
+    
 ]
 
 MIDDLEWARE = [
