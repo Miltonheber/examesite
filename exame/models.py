@@ -10,8 +10,8 @@ class Post(models.Model):
     imagem = models.FileField('imagem',upload_to='imagem',blank=True)
     corpo = models.TextField('Corpo')
     alta = models.BooleanField(default=False)
-    pdf = models.FileField('documento',blank=True, upload_to='documentos',unique=True)
-    texto= models.CharField('Texto do documento', max_length=300, blank=True)
+    pdf = models.FileField('documento', upload_to='documentos', blank=True, null=True)
+    texto= models.CharField('Texto do documento', max_length=300, blank=True,null=True)
 
 
 
