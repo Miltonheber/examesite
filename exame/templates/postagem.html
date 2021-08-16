@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load bootstrap4 %}
-{% load static %}
+
 
 
 {% block titulo %}
@@ -13,6 +13,34 @@
     <img src="/media/{{postagem.imagem}}">
     <p class="date">Publicado {{postagem.data}} por Milton</p>
     <p class="paragrafos">{{postagem.corpo}}</p>
+    {% if postagem.texto %}
+    	
+	<p class="paragrafos-especial">{{postagem.texto}}</p>
+	{% buttons %}<a href="{{postagem.pdf.url}}" download><button type="button" class="btn btn-primary">Baixar documento</button></a>{% endbuttons %}
+    {% endif %}
 
+<!-- trending -->
+
+    {% if posts  %}
+    
+	<h1 class="titulos-especial">Artigos relacionados </h1>
+    	{% for post in posts %}
+	<div class="relacionados">
+		<h1 class="titulos"><a href="{% url 'Postagem' post.id %}">{{post.titulo}}</a></h1>
+		<img src='/media/{{post.imagem}}'>
+		<p class="date">Publicado em {{post.data}} Por Milton</p>
+		<p class="paragrafos">{{post.corpo|truncatewords:20}}</p>
+
+
+
+	</div>
+
+
+
+	{% endfor %}
+   
+    {% endif %}
+
+    
 
 {% endblock %}

@@ -12,7 +12,13 @@ urlpatterns = [
         path('escolar',exame_escolar,name='exame_escolar'),
         path('outrosexames',outros_exames,name='outros_exames'),
         path('postagem/<int:id>', postagem,name='Postagem'),
+        path('privacidade', privacidade, name='privacidade'),
+        
         path('sobre', sobre, name='sobre'),
+        path('contacto', contacto, name="contacto"),
+        path('historia', exame_historia, name='historia'),
+        path('geografia', exame_geografia, name='geografia'),
+        path('english', exame_english, name='english'),
 
 
 

@@ -12,7 +12,7 @@
 	<h1 class="titulos"><a href="{% url 'Postagem' post.id %}">{{post.titulo}}</a></h1>
 	<img src="/media/{{post.imagem}}">
 	<p class="date">Publicado {{post.data}}por Milton</p>
-	<p class="paragrafos">{{post.corpo|truncatewords:60}}{% buttons %} <button type="button" class="btn btn-secondary bg-dark"><a id="ancoraborda" href="{% url 'Postagem' post.id %}">Ler mais</a></button>{% endbuttons %}</p>
+	<p class="paragrafos">{{post.corpo|truncatewords:60}}<a  href="{% url 'Postagem' post.id %}" class="btn btn-primary">LER MAIS</a></p>
 
 	{% endfor %}
 {% endblock %}

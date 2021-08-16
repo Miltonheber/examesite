@@ -1,16 +1,19 @@
 {% load bootstrap4 %}
 {% load static %}
+{% load bootstrap_icons %}
 
 <!DOCTYPE html>
-<html>
+<html lang="pt-pt">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="" content="">
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    
     <title>{% block titulo %}{% endblock %}</title>
     {% bootstrap_css %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
   </head>
   <body>
+  
   <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
   <a class="navbar-brand" href="{% url 'index' %}">ExamesMoz</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +27,7 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Exames UEM UP ISRI 
+          Exames UEM UP ISRI IFP ACIPOL ISCISA 
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="{% url 'exame_matematica' %}">Matematíca</a>
@@ -32,7 +35,12 @@
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="{% url 'exame_portugues' %}">Português</a>
           <a class="dropdown-item" href="{% url 'exame_quimica' %}">Química</a>
-          <a class="dropdown-item" href="{% url 'outros_exames' %}">Outros Exames</a>
+          <a class="dropdown-item" href="{% url 'historia' %}">História</a>
+	  <a class="dropdown-item" href="{% url 'geografia' %}">Geografia</a>
+	  <a class="dropdown-item" href="{% url 'outros_exames' %}">Outros Exames</a>
+
+
+
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -40,26 +48,58 @@
           Exames adm ETP
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{% url 'exame_etp' %}">Matematíca e Física</a>
+          <a class="dropdown-item" href="{% url 'exame_etp' %}">Matematíca Português Física</a>
         </div>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          10°& 12°
+           12° classe
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="{% url 'exame_escolar' %}">Todos Exames</a>
         </div>
       </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'privacidade' %}">Políticas de Privacidade</a>
+      </li>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'sobre' %}">Sobre nós</a>
+      </li>
+     </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
+      </li>
     </ul>
   </div>
 </nav>
+
   {% block conteudo %}
   {% endblock %}
-   
-      <footer>
-      
-      </footer>
-     {% bootstrap_javascript jquery='full' %} 
+     <section class="footer">
+	     <div class="socials">
+		     <a href="https://www.instagram.com/milton_heber/"><i>{% bs_icon 'instagram' %}</i></a>
+		     <a href="https://github.com/Miltonheber"><i>{% bs_icon 'github' %}</i></a>
+		     <a href="https://youtube.com/channel/UCbnyopCMf_YG3Qh8_nWAh6w"><i>{% bs_icon 'youtube' %}</i></a>
+	     </div>
+
+	     <ul class="list">
+		     <li>
+			     <a href="{% url 'index' %}">Home</a>
+
+		     </li>
+		     <li>
+			     <a href="{% url 'sobre' %}">Sobre Nós</a>
+		     </li>
+		     <li>
+			     <a href="{% url 'contacto' %}">Contacto</a>
+		     </li>
+	    </ul>
+	    <p class="copyright">ExamesMoz ® 2021</p>
+     </section>
+
+
+
+     {% bootstrap_javascript jquery='full' %}
   </body>
 </html>

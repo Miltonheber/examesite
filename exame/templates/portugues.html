@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% load bootstrap4 %}
 
-{% block titulo %} {{exames.disciplina}}{% endblock %}
+{% block titulo %} Exames de Português{% endblock %}
 
 
 
 {% block conteudo %}
 {% if exames %}
-	<h1 class="titulos">Exames de {{exames.disiplina}}</h1>
+	<h1 class="titulos">Exames de Português</h1>
 	<table class="table table-dark">
 	  <thead>
 	    <tr>
@@ -23,7 +23,7 @@
 		      <td scope="row">{{exame.ano}}</td>
 		      <td scope="row">{{exame.disciplina}}</td>
 		      <td scope="row">{{exame.instituicao}}</td>
-		      <td scope="row">{% buttons %} <button type="button" class="btn btn-success">Baixar</button>{% endbuttons %}</td>
+		      <td scope="row">{% buttons %}<a href="{{exame.pdf.url}}" download> <button type="button" class="btn btn-success">Baixar</button></a>{% endbuttons %}</td>
 		    </tr>  
 		  </tbody>
 		{% endfor %}

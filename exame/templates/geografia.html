@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block titulo %}
+	Exames de Geografia
+{% endblock %}
+{% block conteudo %}
+	{% if exames %}
+		<table class="table table-dark">
+	 <thead>
+	   <tr>
+	     <th scope="col">Ano</th>
+	     <th scope="col">Disciplina</th>
+	     <th scope="col">Classe</th>
+	     <th scope="col">Baixar</th>
+	   </tr>
+	 </thead>
+	 {% for exame in exames %}
+		 <tbody>
+		   <tr>
+		     <td scope="row">{{exame.ano}}</td>
+		     <td scope="row">{{exame.disciplina}}</td>
+		     <td scope="row">{{exame.classe}}</td>
+		     <td scope="row">{% buttons %}<a href="{{exame.pdf.url}}" download><button type="button" class="btn btn-success">Baixar</button></a>{% endbuttons %}</td>
+		   </tr>  
+		 </tbody>
+	{% endfor %}
+</table>
+	{% endif %}
+	{% if not exames %}
+		<h1 class="titulos">Não há Exames disponíveis:(</h1>
+	{% endif %}
+{% endblock %}
