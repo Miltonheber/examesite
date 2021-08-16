@@ -13,11 +13,7 @@
     <img src="/media/{{postagem.imagem}}">
     <p class="date">Publicado {{postagem.data}} por Milton</p>
     <p class="paragrafos">{{postagem.corpo}}</p>
-    {% if postagem.texto %}
-    	
-	<p class="paragrafos-especial">{{postagem.texto}}</p>
-	{% buttons %}<a href="{{postagem.pdf.url}}" download><button type="button" class="btn btn-primary">Baixar documento</button></a>{% endbuttons %}
-    {% endif %}
+    
 
 <!-- trending -->
 
