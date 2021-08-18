@@ -4,5 +4,7 @@ __pycache__
 .ideia
 db.sqlite3
 .pyc
+migrations
+node_modules/migrations
 
 
