@@ -92,7 +92,7 @@ class Exame(models.Model):
 
 
 
-    ano = models.CharField('Ano',max_length=4,unique=True, choices=ANO_CHOICES)
+    ano = models.CharField('Ano',max_length=4, choices=ANO_CHOICES)
     disciplina = models.CharField('Disciplina',max_length=100, choices=DISCIPLINAS_CHOISES)
     instituicao = models.CharField('Instituição',max_length=100, choices=UNI_CHOISES)
     nivel = models.CharField('Nivel', max_length=100, choices=NIVEL_CHOISES)
